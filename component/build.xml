@@ -1,0 +1,21 @@
+<project>
+    <target name="clean">
+        <delete dir="build"/>
+        <delete dir="jar"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build"/>
+        <javac srcdir="src" destdir="build"/>
+    </target>
+
+    <target name="jar">
+        <jar destfile="rsa.jar" basedir="build"/>
+        <jar destfile="rsa_cracker.jar" basedir="build"/>
+        <jar destfile="shift.jar" basedir="build"/>
+        <jar destfile="shift_cracker.jar" basedir="build"/>
+    </target>
+
+    <target name="all" depends="clean, compile, jar">
+    </target>
+</project>

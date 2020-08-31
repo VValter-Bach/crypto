@@ -1,0 +1,2 @@
+encrypting Message Hallo using shift and key file with name shiftKey.json
+encrypted Message to Ibmmp
