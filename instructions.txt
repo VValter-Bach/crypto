@@ -1,0 +1,22 @@
+show algorithm
+encrypt message "Hallo" using shift and keyfile shiftKey.json
+decrypt message "Ibmmp" using shift and keyfile shiftKey.json
+encrypt message "Hallo" using rsa and keyfile publicKey.json
+decrypt message "J+hHGSi99jMXjbof" using rsa and keyfile privateKey.json
+crack encrypted message "Ibmmp" using shift
+crack encrypted message "J+hHGSi99jMXjbof" using rsa
+register participant horst with type normal
+register participant schlemmer with type normal
+register participant rainer with type intruder
+create channel kochen from horst to schlemmer
+create channel kochen from horst to schlemmer
+create channel test from schlemmer to horst
+show channel
+drop channel kochen
+drop channel kochen
+create channel kochen from horst to schlemmer
+intrude channel kochen by rainer
+send message "WIEGEHTESWIESTEHTES" from horst to schlemmer using shift and keyfile shiftKey.json
+send message "WIEGEHTESWIESTEHTES" from horst to schlemmer using rsa and keyfile publicKey.json
+send message "WIEGEHTESWIESTEHTES" from schlemmer to horst using shift and keyfile shiftKey.json
+send message "WIEGEHTESWIESTEHTES" from schlemmer to horst using rsa and keyfile publicKey.json
