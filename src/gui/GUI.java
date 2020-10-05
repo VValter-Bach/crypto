@@ -42,6 +42,7 @@ public class GUI extends Application {
         outputArea.setEditable(false);
 
         Company comp = new Company(outputArea);
+        comp.Simulation();
 
         executeButton.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {

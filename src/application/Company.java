@@ -23,6 +23,25 @@ public class Company {
     private ArrayList<Participant> participants;
     private ArrayList<Channel> channels;
 
+    public void Simulation(){
+        //Simulation Participants
+        AddParticipant("branch_hkg", "normal");
+        AddParticipant("branch_cpt", "normal");
+        AddParticipant("branch_sfo", "normal");
+        AddParticipant("branch_syd", "normal");
+        AddParticipant("branch_wuh", "normal");
+        AddParticipant("msa", "intruder");
+
+        //Simulation Channel
+        AddChannel("hkg_wuh","branch_hkg","branch_wuh");
+        AddChannel("hkg_cpt","branch_hkg","branch_cpt");
+        AddChannel("cpt_syd","branch_cpt","branch_syd");
+        AddChannel("syd_sfo","branch_syd","branch_sfo");
+
+        //Communication of Morpheus
+        SendMessage("morpheus", "branch_hkg", "branch_wuh", "shift", "shiftKey.json");
+    }
+
     public Company(javafx.scene.control.TextArea outputArea) {
         this.outputArea = outputArea;
         isDebug = false;

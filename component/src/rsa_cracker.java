@@ -4,7 +4,6 @@ import java.util.List;
 
 public class rsa_cracker {
     public static String decrypt(String encryptedMessage) {
-        //return "mama";
         BigInteger e = BigInteger.valueOf(12371);
         BigInteger n = new BigInteger("517815623413379");
 
